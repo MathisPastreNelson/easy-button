@@ -1,0 +1,13 @@
+.dropdown1_Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+}
+
+// scss du button 1
+.dropdown1 {
+  cursor: pointer;
+  text-align: left; /* Aligner le texte à gauche */
+  padding: 20px 10px;
+}
