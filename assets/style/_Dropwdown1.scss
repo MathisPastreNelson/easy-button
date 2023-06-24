@@ -5,9 +5,64 @@
   min-height: 10vh;
 }
 
-// scss du button 1
-.dropdown1 {
+// button
+.dropdown1_Button {
+  background-color: skyblue;
+  color: white;
   cursor: pointer;
-  text-align: left; /* Aligner le texte à gauche */
   padding: 20px 10px;
+  position: relative;
+  border: 0px;
+  width: 200px;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+// Icone
+.dropdown1_Icon {
+  width: 20px;
+}
+
+// ul
+.dropdown1_List {
+  background-color: rgb(58, 58, 58);
+  color: white;
+  position: absolute;
+  text-align: center;
+  list-style: none;
+  left: 0px;
+  top: 58px;
+  width: 200px;
+  animation: slide-in-blurred-top 150ms ease-in;
+}
+
+// li
+.dropdown1_List > li {
+  padding: 1rem 0;
+}
+
+.dropdown1_List > li:hover {
+  background-color: rgb(119, 119, 119);
+}
+
+// Disparition/Apparition de la liste
+.dropdown1_List {
+  display: none;
+}
+
+.dropdown1_List.show {
+  display: block;
+}
+
+// Animation d'apparition
+@keyframes slide-in-blurred-top {
+  0% {
+    transform: translateY(-100px) scaleY(0);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
 }
