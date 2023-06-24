@@ -16,7 +16,7 @@ section > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: salmon;
+  background-color: rgb(255, 255, 255);
 }
 
 section > div > * {
@@ -131,7 +131,7 @@ header {
 }
 
 .dropdown1_Button {
-  background-color: skyblue;
+  background-color: red;
   color: white;
   cursor: pointer;
   padding: 20px 10px;
@@ -145,6 +145,15 @@ header {
   font-size: 16px;
 }
 
+.dropdown1_Button:hover {
+  background-color: salmon;
+}
+
+.dropdown1_Button:focus {
+  background-color: rgb(241, 250, 114);
+  color: black;
+}
+
 .dropdown1_Icon {
   width: 20px;
 }
@@ -156,13 +165,13 @@ header {
   text-align: center;
   list-style: none;
   left: 0px;
-  top: 58px;
+  top: 60px;
   width: 200px;
   animation: slide-in-blurred-top 150ms ease-in;
 }
 
 .dropdown1_List > li {
-  padding: 1rem 0;
+  padding: 20px 10px;
 }
 
 .dropdown1_List > li:hover {
@@ -179,10 +188,12 @@ header {
 
 @keyframes slide-in-blurred-top {
   0% {
-    transform: translateY(-100px) scaleY(0);
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
   }
   100% {
-    transform: translateY(0) scaleY(1);
+    transform-origin: 100% 0%;
+    transform: scaleY(1);
   }
 }
 footer {

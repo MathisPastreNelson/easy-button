@@ -1,3 +1,4 @@
+// Contient le button
 .dropdown1_Container {
   display: flex;
   justify-content: center;
@@ -5,9 +6,9 @@
   min-height: 10vh;
 }
 
-// button
+// Button
 .dropdown1_Button {
-  background-color: skyblue;
+  background-color: red;
   color: white;
   cursor: pointer;
   padding: 20px 10px;
@@ -19,6 +20,15 @@
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
+}
+
+.dropdown1_Button:hover {
+  background-color: salmon;
+}
+
+.dropdown1_Button:focus {
+  background-color: rgb(241, 250, 114);
+  color: black;
 }
 
 // Icone
@@ -34,14 +44,14 @@
   text-align: center;
   list-style: none;
   left: 0px;
-  top: 58px;
+  top: 60px;
   width: 200px;
   animation: slide-in-blurred-top 150ms ease-in;
 }
 
 // li
 .dropdown1_List > li {
-  padding: 1rem 0;
+  padding: 20px 10px;
 }
 
 .dropdown1_List > li:hover {
@@ -60,9 +70,11 @@
 // Animation d'apparition
 @keyframes slide-in-blurred-top {
   0% {
-    transform: translateY(-100px) scaleY(0);
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
   }
   100% {
-    transform: translateY(0) scaleY(1);
+    transform-origin: 100% 0%;
+    transform: scaleY(1);
   }
 }

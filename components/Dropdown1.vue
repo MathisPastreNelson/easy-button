@@ -1,9 +1,11 @@
 <template>
   <div class="dropdown1_Container">
+    <!-- Bouton -->
     <button class="dropdown1_Button" @click="toggleDropdown">
-      {{ selectedItem || "Dropdown example 1" }}
+      {{ selectedItem || "Filtrer par" }}
+      <!-- Affichage de l'icône correspondante à l'état du menu déroulant -->
       <img
-        v-if="isDropdownVisible"
+        v-if="!isDropdownVisible"
         class="dropdown1_Icon"
         src="~/assets/icons/arrow-up.svg"
         alt="go up" />
@@ -12,13 +14,16 @@
         class="dropdown1_Icon"
         src="~/assets/icons/arrow-bot.svg"
         alt="go down" />
+      <!-- Liste du menu déroulant -->
       <ul
         class="dropdown1_List"
         :class="{ show: isDropdownVisible }"
         id="dropdownList">
+        <!-- Affichage de l'option "Filtrer par" si la première option n'est pas sélectionnée -->
         <li v-if="shouldShowDropdownExample1" @click="selectItem('')">
-          Dropdown example 1
+          Filtrer par
         </li>
+        <!-- Options de base -->
         <li @click="selectItem('1 Selected')">1</li>
         <li @click="selectItem('2 Selected')">2</li>
         <li @click="selectItem('3 Selected')">3</li>
@@ -32,12 +37,13 @@
 export default {
   data() {
     return {
-      isDropdownVisible: false,
-      selectedItem: "",
+      isDropdownVisible: false, // Indique si le menu déroulant est visible ou non
+      selectedItem: "", // Option actuellement sélectionnée dans le menu déroulant
     };
   },
   computed: {
     shouldShowDropdownExample1() {
+      // Vérifie si l'option "Dropdown example 1" ou aucune option n'est sélectionnée
       return (
         this.selectedItem !== "Dropdown example 1" && this.selectedItem !== ""
       );
@@ -45,14 +51,16 @@ export default {
   },
   methods: {
     toggleDropdown() {
+      // Inverse la visibilité du menu déroulant lorsque le bouton est cliqué
       this.isDropdownVisible = !this.isDropdownVisible;
     },
     selectItem(item) {
+      // Sélectionne une option dans le menu déroulant
       this.selectedItem = item;
-      this.isDropdownVisible = false;
-      this.removeDropdownListClass();
+      dropdownList.classList.remove("show"); // Supprime la classe "show" pour masquer la liste du menu déroulant
     },
     removeDropdownListClass() {
+      // Supprime la classe "show" pour masquer la liste du menu déroulant
       const dropdownList = document.getElementById("dropdownList");
       dropdownList.classList.remove("show");
     },
