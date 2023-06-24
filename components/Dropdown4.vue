@@ -1,27 +1,32 @@
 <template>
-  <div class="dropdown1_Container">
+  <div class="dropdown4_Container">
     <!-- Bouton -->
-    <button class="dropdown1_Button" @click="toggleDropdown">
-      {{ selectedItem || "Filtrer par clique" }}
+    <button
+      class="dropdown4_Button"
+      @mouseover="isDropdownVisible = true"
+      @mouseleave="isDropdownVisible = false">
+      {{ selectedItem || "Filtrer par survol" }}
       <!-- Affichage de l'icône correspondante à l'état du menu déroulant -->
       <img
         v-if="!isDropdownVisible"
-        class="dropdown1_Icon"
+        class="dropdown4_Icon"
         src="~/assets/icons/arrow-up.svg"
         alt="go up" />
       <img
         v-else
-        class="dropdown1_Icon"
+        class="dropdown4_Icon"
         src="~/assets/icons/arrow-bot.svg"
         alt="go down" />
       <!-- Liste du menu déroulant -->
       <ul
-        class="dropdown1_List"
+        class="dropdown4_List"
         :class="{ show: isDropdownVisible }"
-        id="dropdownList">
-        <!-- Affichage de l'option "Filtrer par clique" si la première option n'est pas sélectionnée -->
+        id="dropdownList"
+        @mouseover="isDropdownVisible = true"
+        @mouseleave="isDropdownVisible = false">
+        <!-- Affichage de l'option "Filtrer par survol" si la première option n'est pas sélectionnée -->
         <li v-if="shouldShowDropdownExample1" @click="selectItem('')">
-          Filtrer par clique
+          Filtrer par survol
         </li>
         <!-- Options de base -->
         <li @click="selectItem('1 Selected')">1</li>
@@ -55,20 +60,6 @@ export default {
       this.selectedItem = item;
       const dropdownList = this.$el.querySelector("#dropdownList");
       dropdownList.classList.remove("show"); // Supprime la classe "show" pour masquer la liste du menu déroulant
-    },
-    toggleDropdown() {
-      this.isDropdownVisible = !this.isDropdownVisible;
-      if (this.isDropdownVisible) {
-        document.addEventListener("click", this.handleDocumentClick);
-      } else {
-        document.removeEventListener("click", this.handleDocumentClick);
-      }
-    },
-    handleDocumentClick(event) {
-      const dropdownContainer = this.$el.querySelector(".dropdown1_Container");
-      if (!dropdownContainer.contains(event.target)) {
-        this.isDropdownVisible = false;
-      }
     },
   },
 };

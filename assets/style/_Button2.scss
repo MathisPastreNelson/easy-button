@@ -15,6 +15,7 @@
   font-size: 16px;
   font-weight: 700;
   transition: 150ms ease-in;
+  outline: 0;
 }
 
 .button2:hover {
@@ -22,7 +23,7 @@
   border-radius: 30px;
 }
 
-.button2:active {
-  background-color: #bebebe54;
+.button2:focus {
+  background-color: #cfcfcf;
   color: black;
 }

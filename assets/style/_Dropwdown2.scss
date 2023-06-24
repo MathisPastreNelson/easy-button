@@ -1,5 +1,5 @@
 // Contient le button
-.dropdown1_Container {
+.dropdown2_Container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
 }
 
 // Button
-.dropdown1_Button {
+.dropdown2_Button {
   background-color: rgb(105, 105, 105);
   color: white;
   cursor: pointer;
@@ -24,50 +24,51 @@
   outline: 0;
 }
 
-.dropdown1_Button:hover {
+.dropdown2_Button:hover {
   background-color: salmon;
   transition: 250ms ease-in;
 }
 
-.dropdown1_Button:focus {
+.dropdown2_Button:focus {
   background-color: rgb(128, 199, 22);
   color: black;
   transition: 250ms ease-in;
 }
 
 // Icone
-.dropdown1_Icon {
+.dropdown2_Icon {
   width: 20px;
 }
 
 // ul
-.dropdown1_List {
+.dropdown2_List {
   background-color: rgb(58, 58, 58);
+
   color: white;
   position: absolute;
   text-align: center;
   list-style: none;
-  left: 0px;
-  top: 60px;
+  left: 100%;
+  top: 0px;
   width: 200px;
   animation: slide-in-blurred-top 150ms ease-in;
 }
 
 // li
-.dropdown1_List > li {
+.dropdown2_List > li {
   padding: 20px 10px;
 }
 
-.dropdown1_List > li:hover {
+.dropdown2_List > li:hover {
   background-color: rgb(119, 119, 119);
 }
 
 // Disparition/Apparition de la liste
-.dropdown1_List {
+.dropdown2_List {
   display: none;
 }
 
-.dropdown1_List.show {
+.dropdown2_List.show {
   display: block;
 }
 
