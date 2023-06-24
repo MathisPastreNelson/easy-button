@@ -64,15 +64,3 @@
 .dropdown3_List.show {
   display: block;
 }
-
-// Animation d'apparition
-@keyframes slide-in-blurred-top {
-  0% {
-    transform-origin: 0% 0%;
-    transform: scaleY(0);
-  }
-  100% {
-    transform-origin: 100% 0%;
-    transform: scaleY(1);
-  }
-}

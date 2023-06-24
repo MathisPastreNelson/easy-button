@@ -45,7 +45,7 @@
   left: 100%;
   top: 0px;
   width: 200px;
-  animation: slide-in-blurred-top 150ms ease-in;
+  animation: slide-in-blurred-top2 250ms ease-in;
 }
 
 // li
@@ -64,16 +64,4 @@
 
 .dropdown4_List.show {
   display: block;
-}
-
-// Animation d'apparition
-@keyframes slide-in-blurred-top {
-  0% {
-    transform-origin: 0% 0%;
-    transform: scaleY(0);
-  }
-  100% {
-    transform-origin: 100% 0%;
-    transform: scaleY(1);
-  }
 }
